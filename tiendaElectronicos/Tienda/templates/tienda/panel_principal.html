@@ -1,0 +1,96 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<article class="content dashboard-page">
+    <section class="section">
+        <div class="row sameheight-container">
+            <div class="col col-12 col-sm-12 col-md-12 col-xl-12 stats-col">
+                <div class="card sameheight-item stats" data-exclude="xs">
+                    <div class="card-block">
+                        <div class="title-block">
+                            <h2 class="title">Datos de Registros</h2>
+                            <p class="title-description">
+                                {{ fecha }}
+                            </p>
+                        </div>
+                        <div class="row row-sm stats-container">
+                            <div class="col-12 col-sm-6 stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ articulosRegistrados }}</div>
+                                    <div class="name">Artículos Registrados</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ proveedoresRegistrados }}</div>
+                                    <div class="name">Proveedores Registrados</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6  stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ clientesRegistrados }}</div>
+                                    <div class="name">Clientes registrados</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6  stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ pedidosRegistrados }}</div>
+                                    <div class="name">Pedidos Registrados</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6  stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ almacenesRegistrados }}</div>
+                                    <div class="name">Almacenes Registrados</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6  stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ sucursalesRegistradas }}</div>
+                                    <div class="name">Sucursales Registradas</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6  stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ urgentes }}</div>
+                                    <div class="name">Pedidos Urgentes</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6  stat-col">
+                                <div class="stat">
+                                    <div class="value">{{ centroDist }}</div>
+                                    <div class="name">Pedidos hacia un Centro de Distribución</div>
+                                </div>
+                                <div class="progress stat-progress">
+                                    <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base/base.html" %}
+ 
+{% block title %}Editar Almacen{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="{% url 'actualizaralmacen' almacen.codigo %}">  
+        {% csrf_token %}  
+        <div class="container">  
+           <br>  
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <h3>Actualizar Sucursal</h3>  
+                </div>  
+            </div>  
+            <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Código:</label>  
+                <div class="col-sm-4">  
+                    <input type="text" class="form-control" name="codigo" id="id_codigo" required maxlength="100" value="{{ almacen.codigo }}" />
+                </div>  
+            </div>  
+            <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Nombre:</label>  
+                <div class="col-sm-4">  
+                    <input type="text" class="form-control" name="nombre" id="id_nombre" required maxlength="100" value="{{ almacen.nombre }}" />
+                </div>  
+            </div>
+            <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Dirección:</label>  
+                <div class="col-sm-4">  
+                    <input type="text" class="form-control" name="direccion" id="id_direccion" required maxlength="100" value="{{ almacen.direccion }}" />
+                </div>  
+            </div>
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <button type="submit" class="btn btn-success btn-lg">Actualizar</button>  
+                </div>  
+            </div>  
+        </div>  
+    </form>
+</div>
+
+{% endblock content %}   

@@ -1,0 +1,5 @@
+1. Sistema: tiendaElectronicos
+2. Esquema de entidad de relación
+3. Información de lo que se entrega
+4. README
+5. Datos: tiendaElectronicos.db 

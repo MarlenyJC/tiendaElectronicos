@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+ 
+{% block title %}Crear Nuevo Pedido{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="{% url 'crearpedido' %}" enctype="multipart/form-data">  
+    {% csrf_token %}
+        <div class="form-group row">  
+            <label class="col-sm-1 col-form-label"></label>  
+            <div class="col-sm-4">  
+                <h3>Agregar Información de Pedido</h3>  
+            </div>  
+        </div>  
+        {% for field in form %}
+            <div class="form-group row {{field.name}}">
+                <label class="col-sm-2 col-form-label" for="{{ field.name }}">
+                    {{field.label}}
+                </label>
+                <div class="col-sm-4">
+                    {{field}}
+                </div>
+            </div>
+        {% endfor %}
+         <div class="form-group row">  
+            <label class="col-sm-1 col-form-label"></label>  
+            <div class="col-sm-4">  
+                <button type="submit" class="btn btn-primary">Crear Pedido</button>  
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock content %} 

@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+ 
+{% block title %}Editar Artículo{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="{% url 'actualizararticulo' articulo.codigo %}">  
+        {% csrf_token %}  
+        <div class="container">  
+           <br>  
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <h3>Actualizar Artículo</h3>  
+                </div>  
+            </div>  
+            <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Código:</label>  
+                <div class="col-sm-4">  
+                    <input type="text" class="form-control" name="codigo" id="id_codigo" required maxlength="100" value="{{ articulo.codigo }}" />
+                </div>  
+            </div>  
+            <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Descripción:</label>  
+                <div class="col-sm-4">  
+                    <input type="text" class="form-control" name="descripcion" id="id_descripcion" required maxlength="100" value="{{ articulo.descripcion }}" />
+                </div>  
+            </div>
+            <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Monto:</label>  
+                <div class="col-sm-4">  
+                    <input type="text" class="form-control" name="monto" id="id_monto" required maxlength="100" value="{{ articulo.monto }}" />
+                </div>  
+            </div>
+            <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Proveedores:</label>  
+                <div class="col-sm-4">
+                    <select name="proveedores" required="" id="id_proveedores" multiple="">
+                        {% for proveedor in proveedores %}
+                            <option value="{{proveedor.codigo}}">{{proveedor.codigo}} {{ proveedor.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!-- <ul>
+                        {% for proveedor in proveedores %}
+                            <li id='{{proveedor.codigo}}'>{{proveedor.codigo}} {{ proveedor.nombre}}</li>
+                        {% endfor %}
+                    </ul> -->
+                </div>  
+            </div>
+
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <button type="submit" class="btn btn-success btn-lg">Actualizar</button>  
+                </div>  
+            </div>  
+        </div>  
+    </form>
+</div>
+
+{% endblock content %}   

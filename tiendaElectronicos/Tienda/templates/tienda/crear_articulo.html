@@ -1,0 +1,52 @@
+{% extends "base/base.html" %}
+ 
+{% block title %}Agregar Nuevo Artículo{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="{% url 'creararticulo' %}">  
+        {% csrf_token %}  
+        <div class="container">  
+            <br>  
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <h3>Agregar Detalles de Artículo</h3>  
+                </div>  
+            </div>  
+       
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Código:</label>
+                <div class="col-sm-4">
+                    {{ form.codigo }} 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Descripción:</label>
+                <div class="col-sm-4">
+                    {{ form.descripcion }} 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Monto:</label>
+                <div class="col-sm-4">
+                    {{ form.monto }} 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Proveedores:</label>
+                <div class="col-sm-4">
+                    {{ form.proveedores }} 
+                </div>
+            </div>
+      
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <button type="submit" class="btn btn-primary">Crear Proveedor</button>  
+                </div>  
+            </div>  
+        </div>  
+    </form>  
+</div> 
+{% endblock content %} 

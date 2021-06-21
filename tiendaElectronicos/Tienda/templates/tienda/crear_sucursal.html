@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+ 
+{% block title %}Agregar Nueva Sucursal{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="{% url 'crearsucursal' %}">  
+        {% csrf_token %}  
+        <div class="container">  
+            <br>  
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <h3>Agregar Detalles de Sucursal</h3>  
+                </div>  
+            </div>  
+       
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Código:</label>
+                <div class="col-sm-4">
+                    {{ form.codigo }} 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Nombre:</label>
+                <div class="col-sm-4">
+                    {{ form.nombre }} 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Dirección:</label>
+                <div class="col-sm-4">
+                    {{ form.direccion }} 
+                </div>
+            </div>
+      
+            <div class="form-group row">  
+                <label class="col-sm-1 col-form-label"></label>  
+                <div class="col-sm-4">  
+                    <button type="submit" class="btn btn-primary">Crear Sucursal</button>  
+                </div>  
+            </div>  
+        </div>  
+    </form>  
+</div> 
+{% endblock content %} 
